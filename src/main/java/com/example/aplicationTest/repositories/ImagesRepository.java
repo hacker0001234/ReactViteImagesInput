@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface ImagesRepository extends JpaRepository<Images,Long> {
     Optional<Images> findById(Long id);
+
+    Images findByEmail(String email);
 }

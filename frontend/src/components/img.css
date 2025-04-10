@@ -1,0 +1,85 @@
+body {
+    background-color: #212121;
+}
+
+.imagesGroup {
+    border-radius: 20px;
+    border: solid gray;
+    background-color: #bfbfbf;
+    width: 70%;
+    height: 45%;
+    position: absolute;
+    top: 2%;
+    left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.imagesGroup img {
+    padding: 10px;
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    position: relative;
+    display: inline-block;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.remove-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.remove-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.remove-btn:focus {
+    outline: none;
+}
+@media (max-width: 1266px) {
+    .imagesGroup img {
+        width: 30%;
+        max-width: 30%;
+        height: auto;
+        max-height: 150px;
+    }
+    .imagesGroup{
+        overflow: scroll;
+    }
+}
+#backBtn{
+    justify-content: center;
+    display: flex;
+}
+#backBtn button{
+    position: absolute;
+    bottom: 10%;
+    color: #888888;
+    background-color: #1a1a1a;
+    width: 30%;
+    height: 10%;
+    transition: 1s;
+}
+#backBtn button:hover{
+    color: #212121;
+    background-color: #434343;
+}
+
+

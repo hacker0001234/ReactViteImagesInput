@@ -21,7 +21,28 @@ public class SecurityConfig {
                 .csrfTokenRepository(tokenRepository)
                 )
 
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+         .cors(cors -> cors.configure(http))
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers( "/api/auth/check","/oauth2/authorization/google","/images/id/*","/images/all").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .oauth2Login(oauth2 -> oauth2
+                        .successHandler((request, response, authentication) -> {
+                            response.sendRedirect("http://localhost:5173/user");
+                        })
+
+                )
+                .logout(logout ->
+                        logout
+                                .logoutUrl("/logout")
+                                .logoutSuccessHandler((request, response, authentication) -> {
+                                    response.setStatus(200);
+                                    response.sendRedirect("http://localhost:5173/");
+                                })
+                                .invalidateHttpSession(true)
+                                .clearAuthentication(true)
+                                .deleteCookies("JSESSIONID","avatar","email","name"));
         return http.build();
     }
 }

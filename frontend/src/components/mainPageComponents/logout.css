@@ -1,0 +1,22 @@
+.logoutQuestion{
+color: white;
+font-size: 120%;
+}
+.yesBtn{
+    background-color: #1a1a1a;
+    color: #ea3d3d;
+    transition: 0.5s;
+}
+.noBtn{
+    background-color: #1a1a1a;
+    color: #09b609;
+    transition: 0.5s;
+}
+.yesBtn:hover {
+background-color: #ea3d3d;
+    color: #1a1a1a;
+}
+.noBtn:hover{
+    background-color: #09b609;
+    color: #1a1a1a;
+}
